@@ -1,0 +1,17 @@
+@mixin font-sans-serif($name, $size: false, $weight: false, $color: false, $style: false, $lh: false) {
+    font-family: $name, "Source Sans Pro", Helvetica, Verdana, sans-serif;
+    @if $size {font-size: $size};
+    @if $weight {font-weight: $weight};
+    @if $color {color: $color};
+    @if $style {font-style: $style;}
+    @if $lh {line-height: $lh;}
+}
+
+@mixin font-serif($name, $size: false, $weight: false, $color: false, $style: false, $lh: false) {
+    font-family: $name, "Times New Roman", Times, serif;
+    @if $size {font-size: $size};
+    @if $weight {font-weight: $weight};
+    @if $color {color: $color};
+    @if $style {font-style: $style;}
+    @if $lh {line-height: $lh;}
+}

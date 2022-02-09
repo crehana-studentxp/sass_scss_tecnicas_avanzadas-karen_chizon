@@ -1,0 +1,44 @@
+// Aquí pondremos el código que podamos clasificar como reutilizable:
+
+// El código reutilizable puede ser:
+// - botones
+// - barras de navegación
+// - estilos para secciones 
+// - tarjetas
+// - modals
+
+@use 'base' as *
+
+article
+    max-width: $mediumWidth
+    margin: 20px auto
+    padding: 15px
+    border: 1px solid $secondaryColor
+    border-radius: 3px
+
+section
+    padding: 25px
+
+footer
+    margin-top: auto
+    background-color: $secondaryColor
+    text-align: center
+    padding: 20px
+    color: $baseColor
+
+header 
+    background-color: $secondaryColor
+    padding: 0 15px
+    .brand 
+        margin: 0
+        padding: 0
+    .logo
+        width: 65px
+        height: auto
+    .container 
+        display: flex
+        align-items: center
+        justify-content: space-between
+    ul li 
+        display: inline-block
+        color: $baseColor

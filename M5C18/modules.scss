@@ -1,0 +1,32 @@
+@use 'sass:math';
+@use 'sass:list';
+@use 'sass:map';
+@use 'sass:color';
+
+// math
+$widths: 10em, 30em, 100em;
+@debug math.max($widths...);
+@debug math.unit(math.max($widths...));
+
+// list
+@debug list.join((blue, red), (#00ff00, #ffff00));
+
+// map
+$helvetica-light: ( 
+    "weights": (
+        "lightest": 100,
+        "light": 300
+    )
+);
+$helvetica-heavy: (
+    "weights": (
+        "medium": 500,
+        "bold": 700
+    )
+);
+
+@debug map.deep-merge($helvetica-light, $helvetica-heavy);
+@debug map.merge($helvetica-light, $helvetica-heavy);
+
+// sass:color
+@debug color.invert(white);

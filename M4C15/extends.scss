@@ -1,0 +1,25 @@
+.btn {
+    border-radius: 2px;
+    margin: 5px;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.warning-btn {
+    @extend .btn;
+    background-color: yellow;
+    color: black;
+}
+
+
+%baseHeading {
+    font: {
+        family: Merriweather, Georgia, "Times New Roman", serif;;
+        weight: bold;
+        variant: small-caps;
+    }
+}
+
+h1 {
+    @extend %baseHeading;
+}

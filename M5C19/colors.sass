@@ -1,0 +1,30 @@
+@use 'sass:color'
+
+$baseColor: #9C86F9
+$desaturatedBase: desaturate($baseColor, 50%)
+$invertedBase: color.invert($baseColor, $weight: 80%)
+
+body
+  padding: 15px
+  // background-color: color.adjust($baseColor, $red: 100, $blue: 50)
+  // background-color: lighten($baseColor, 20%)
+  background-color: lighten($desaturatedBase, 10%)
+
+p
+  margin-left: 25px
+
+.test 
+  color:  $baseColor
+  span
+    color: color.complement($baseColor)
+    
+section
+  padding: 15px
+  max-width: 400px
+  background-color: darken($baseColor, 50%)
+  border: 10px solid $invertedBase
+  p
+    margin-left: 10px
+    color: $desaturatedBase
+    span
+      color: color.invert($desaturatedBase)

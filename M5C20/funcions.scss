@@ -1,0 +1,49 @@
+@mixin pos($type, $args: 0 0 0 0) {
+    position: $type;
+    $offsets: top right bottom left;
+    @if length($args) == 2 or length($args) == 4 {
+        @if length($args) == 2 {
+            $args: join($args, $args);
+        }
+        @each $offset in $offsets {
+            $offsetVal: nth($args, index($offsets, $offset));
+            #{$offset}: validOffset($offsetVal);
+        }
+    } @else {
+        @warn "El número de argumentos sólo puede ser 2 ó 4";
+    }
+}
+
+@function validOffset($value) {
+    @if type-of($value) == number {
+        @if ($value != 0) {
+            @return $value;
+        } @else {
+            @return 0;
+        }
+    } @else if str-slice($value, 1, 1) == "f" {
+        @return 0;
+    } @else if index(auto initial inherit, $value) {
+        @return $value;
+    } @else {
+        @warn "Posición inválida";
+        @return null;
+    }
+}
+
+@mixin abs($args: 0 0 0 0) {
+    @include pos(absolute, $args);
+}
+@mixin rel($args: 0 0 0 0) {
+    @include pos(relative, $args);
+}
+@mixin fix($args: 0 0 0 0) {
+    @include pos(fixed, $args);
+}
+@mixin sticky($args: 0 0 0 0) {
+    @include pos(sticky, $args);
+}
+
+.position {
+    @include sticky(0 0 f10 auto);
+} 

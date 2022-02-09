@@ -1,0 +1,28 @@
+@mixin resetSpacing {
+    margin: 0;
+    padding: 0;
+    width: 300px;
+}
+
+@mixin font-serif($name, $size: false, $weight: false, $color: false, $style: false, $lh: false) {
+    font-family: $name, "Times New Roman", Times, serif;
+    @if $size {font-size: $size};
+    @if $weight {font-weight: $weight};
+    @if $color {color: $color};
+    @if $style {font-style: $style;}
+    @if $lh {line-height: $lh;}
+}
+
+@mixin font-sans-serif($name, $size: false, $weight: false, $color: false, $style: false, $lh: false) {
+    font-family: $name, "Source Sans Pro", Helvetica, Verdana, sans-serif;
+    @if $size {font-size: $size};
+    @if $weight {font-weight: $weight};
+    @if $color {color: $color};
+    @if $style {font-style: $style;}
+    @if $lh {line-height: $lh;}
+}
+
+.no-spacing {
+    @include resetSpacing;
+    border: 1px solid #ff0000;
+}
